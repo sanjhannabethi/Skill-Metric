@@ -1,0 +1,53 @@
+/* ProfileForm.css */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+h4{
+  margin: 25px;
+}
+.form-section h4 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.education-entry {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.add-btn {
+  margin-top: 10px;
+}
+
+.form-label {
+  color: white;
+  font-weight: bold;
+}
+
+.text-center {
+  margin-top: 50px;
+  font-size: 6px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
