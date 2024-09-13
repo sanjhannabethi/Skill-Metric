@@ -1,137 +1,138 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
+import './Community.css'; // Add a separate CSS file to keep styling clean
 import Footer from '../components/Footer';
-import './Community.css'; 
+import Header from '../components/Header';
+import Ban from '../images/1000030810_Original.jpg'
+
 const Community = () => {
-  // State to manage posts
-  const [posts, setPosts] = useState([
-    { id: 1, user: 'Lalit SDE-1 at Microsoft', text: 'I recently had an interview with Microsoft for a full-stack developer role. The interview focused heavily on my Taskly project, particularly the dashboard component. I explained the code in detail, including the architecture, state management, and backend integration. The interviewer asked about specific decisions I made in the project, such as handling user authentication and managing tasks and labels. Overall, it was a positive experience, and I felt prepared to discuss the technical aspects of my work.', date: 'September 5, 2024', image: null, likes: 3, comments: [] },
-    { id: 2, user: 'Teja', text: 'Excited to announce our new features.', date: 'September 4, 2024', image: null, likes: 7, comments: [] },
-    // More posts here...
-  ]);
+  // Initial state for posts
+const [posts, setPosts] = useState([
+  {
+    id: 1,
+    title: "Google Interview Experience",
+    tags: "#interview #google",
+    likes: 0,
+    comments: 0,
+    content: `I recently interviewed at Google for a software engineering role, and here’s a quick rundown of my experience:
+
+    - Recruiter Call: Initial discussion about my background, experience, and the role.
+    - Technical Phone Screen: A 45-minute coding interview with a problem focused on data structures and algorithms.
+    - Onsite Interview: Consisted of multiple rounds, including coding, system design, and behavioral interviews. Coding rounds covered algorithms, problem-solving, and optimization.
+
+    The process was challenging but insightful. Preparation in problem-solving and clear communication is key!`,
+  }
+]);
+
 
   // State for new post input
-  const [newPost, setNewPost] = useState('');
+  const [newPost, setNewPost] = useState({ title: '', content: '' });
 
-  // Add a new post
-  const handlePostSubmit = () => {
-    if (newPost.trim() !== '') {
-      const newPostData = {
-        id: posts.length + 1,
-        user: 'You', // Static for now
-        text: newPost,
-        date: new Date().toLocaleDateString(),
-        image: null, // Optional image field
-        likes: 0,
-        comments: [],
-      };
-      setPosts([newPostData, ...posts]); // Add new post to the top
-      setNewPost(''); // Reset input field
+  // Handler to update likes
+  const handleLike = (postId) => {
+    setPosts(posts.map(post => post.id === postId ? { ...post, likes: post.likes + 1 } : post));
+  };
+
+  // Handler to add a comment
+  const handleComment = (postId) => {
+    setPosts(posts.map(post => post.id === postId ? { ...post, comments: post.comments + 1 } : post));
+  };
+
+  // Handler to add a new post
+  const handleAddPost = () => {
+    if (newPost.title.trim() && newPost.content.trim()) {
+      const newPostId = posts.length + 1;
+      setPosts([...posts, { id: newPostId, title: newPost.title, content: newPost.content, likes: 0, comments: 0 }]);
+      setNewPost({ title: '', content: '' }); // Clear the form
     }
   };
 
-  // Like post function
-  const handleLike = (id) => {
-    const updatedPosts = posts.map((post) => {
-      if (post.id === id) {
-        return { ...post, likes: post.likes + 1 };
-      }
-      return post;
-    });
-    setPosts(updatedPosts);
-  };
-
   return (
-    <div className="community-page">
-      <Header />
-      
-      <div className="community-container">
-        <header className="community-header">
-          <h1>Welcome to the Community!</h1>
-          <input type="text" className="community-search-bar" placeholder="Search..." />
-        </header>
-        <main className="community-main">
-          {/* Sidebar - Trending Topics */}
-          <div className="community-column community-first-column">
-          <div className="community-card">
-              <h2>Latest Activity</h2>
-              <ul className="community-activity-feed">
-                <li>Harshith liked your post.</li>
-                <li>Pranav started following you.</li>
-                <li>John Doe posted a new blog.</li>
-              </ul>                      
+    <div>
+      <div className="dashboard-container">
+        <Header />
+        {/* Left Sidebar */}
+        <aside className="left-sidebar">
+          <div className="profile-section">
+            <img src={Ban} alt="User Profile" className="profile-pic" />
+            <h3>Kundan Sai Raj</h3>
+            <ul className="profile-stats">
+              <li>Posts <span>{posts.length}</span></li>
+              <li>Comments <span>{posts.reduce((acc, post) => acc + post.comments, 0)}</span></li>
+              <li>Appreciations <span>{posts.reduce((acc, post) => acc + post.likes, 0)}</span></li>
+              <li>Followers <span>66</span></li>
+              <li>Following <span>7</span></li>
+            </ul>
           </div>
-            <div className="community-card">
-              <h2>Suggested Profiles</h2>
-              <div className="community-suggestions">
-                <div className="community-profile">
-                  <img src="https://via.placeholder.com/50" alt="Profile" />
-                  <p>Harshith</p>
-                  <button className="follow-btn">Follow</button>
-                </div>
-                <div className="community-profile">
-                  <img src="https://via.placeholder.com/50" alt="Profile" />
-                  <p>Pranav</p>
-                  <button className="follow-btn">Follow</button>
-                </div>
-              </div>
-            </div>
+          <nav className="nav-linkss">
+            <a href="/">Home</a>
+            <a href="/">Posts</a>
+            <a href="/">Tags</a>
+            <a href="/">Jobs</a>
+          </nav>
+        </aside>
+
+        {/* Main Feed Section */}
+        <main className="feed">
+          <div className="feed-header">
+            <input type="text" placeholder="Search.." className="search-bar" />
           </div>
 
-          {/* Main Content - Posts */}
-          <div className="community-main-column community-second-column">
-            {/* Create Post Section */}
-            <div className="community-create-post">
-              <h2>Create a New Post</h2>
-              <textarea
-                value={newPost}
-                onChange={(e) => setNewPost(e.target.value)}
-                placeholder="Share your thoughts..."
-              />
-              <button className="community-post-button" onClick={handlePostSubmit}>
-                Post
-              </button>
-            </div>
+          {/* Add new post form */}
+          <div className="add-post">
+            <input
+              type="text"
+              placeholder="New post title"
+              value={newPost.title}
+              onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
+              className="new-post-input"
+            />
+            <input
+              type="text"
+              placeholder="Add Content"
+              value={newPost.content}
+              onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
+              className="new-post-input"
+            />
+            <button onClick={handleAddPost} className="add-post-btn">Add Post</button>
+          </div>
 
-            {/* Display Posts */}
+          <div className="feed-content">
             {posts.map((post) => (
-              <div key={post.id} className="community-post">
-                <h3>{post.user}</h3>
-                <p>{post.text}</p>
-                <span className="community-date">{post.date}</span>
-                <div className="community-post-footer">
-                  <button onClick={() => handleLike(post.id)} className="community-like-btn">
-                    👍 {post.likes} Likes
-                  </button>
+              <div className="feed-post" key={post.id}>
+                <h3>{post.title}</h3>
+                <p>{post.content}</p>
+                <p>{post.tags}</p>
+                <div className="post-actions">
+                  <span role="img" aria-label="likes" onClick={() => handleLike(post.id)}>👍 {post.likes}</span>
+                  <span onClick={() => handleComment(post.id)}>💬 {post.comments}</span>
                 </div>
               </div>
             ))}
           </div>
-
-          {/* Trending and Suggested Section */}
-          <div className="community-column community-third-column">
-            <div className="community-card">
-              <h2>Trending News</h2>
-              <div className="community-button-container">
-                <button className="community-btn">Python Team Fired</button>
-                <button className="community-btn">CodeCrafters Win!</button>
-                <button className="community-btn">Recession</button>
-                <button className="community-btn">Job Oppurtunities in Abroad!</button>
-              </div>
-            </div>
-            <div className="community-card">
-              <h2>Trending Topics</h2>
-              <div className="community-button-container">
-                <button className="community-btn">#skills</button>
-                <button className="community-btn">#jobs</button>
-                <button className="community-btn">#languages</button>
-                <button className="community-btn">#storytime</button>
-              </div>
-            </div>
-          </div>
         </main>
+
+        {/* Right Sidebar */}
+        <aside className="right-sidebar">
+          <div className="followed-tags">
+            <h3>Followed Tags</h3>
+            <ul>
+              <li>#programming</li>
+              <li>#html5</li>
+              <li>#nodejs</li>
+              <li>#css</li>
+              <li>#angularjs</li>
+            </ul>
+          </div>
+          <div className="hot-discussions">
+            <h3>Hot Discussions</h3>
+            <ul>
+              <li>Show me cool, obscure languages! 👍 8</li>
+              <li>Which JavaScript framework is best for a single-page app? 👍 4</li>
+              <li>Which is better - Vue.js or React? 👍 5</li>
+            </ul>
+          </div>
+        </aside>
       </div>
-      
       <Footer />
     </div>
   );

@@ -1,317 +1,211 @@
-/* Base Styles */
-body {
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #232323;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .community-page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #202021;
-  }
-  
-  /* Header */
-  .community-header {
-    margin-top: 70px;
-    color: white;
-    z-index: 3;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-    padding: 40px 0;
-    background-color: #202021;
-  }
-  
-  .community-header h1 {
-    font-size: 2.5rem;
-    color: #fefefe;
-  }
-  
-  .community-search-bar {
-    padding: 12px 20px;
-    width: 50%;
-    margin-top: 20px;
-    border-radius: 30px;
-    border: 1px solid #ddd;
-    outline: none;
-    transition: all 0.3s ease;
-  }
-  
-  .community-search-bar:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-  
-  /* Main Content */
-  .community-main {
-    display: flex;
-    flex-wrap: wrap;
-    height: 600px;
-    justify-content: space-between;
-    padding: 40px;
-    gap: 20px;
-    flex: 1;
-  }
-  
-  /* Columns */
-  .community-column {
-    flex: 1;
-    min-width: 300px;
-    max-width: 25%;
-  }
+/* Main Dashboard Container */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #181818; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+}
 
-  .community-main-column {
-    flex: 1;
-    min-width: 300px;
-    max-width: 55%;
-  }
+/* Left Sidebar */
+.left-sidebar {
   
-  /* Card Styles */
-  .community-card {
-    background-color: #706f6f;
-    padding: 20px;
-    margin: 20px;
-    color: white;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .community-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  }
-  
-  .community-card h2 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 15px;
-  }
-  
-  /* Button Styles */
-  .community-btn {
-    padding: 8px 20px;
-    margin: 5px;
-    border-radius: 30px;
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .community-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .follow-btn {
-    background-color: #28a745;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .follow-btn:hover {
-    background-color: #218838;
-  }
-  
-  /* Create Post Section */
-  .community-create-post {
-    background-color: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .community-create-post h2 {
-    font-size: 1.8rem;
-    color: #333;
-  }
-  
-  .community-create-post textarea {
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 15px;
-    border: 1px solid #ddd;
-    outline: none;
-    resize: none;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  
-  .community-create-post textarea:focus {
-    border-color: #007bff;
-  }
-  
-  .community-post-button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .community-post-button:hover {
-    background-color: #218838;
-  }
-  
-  /* Posts */
-  .community-post {
-    background-color: #706f6f;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  .community-post h3 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-  
-  .community-post p {
-    font-size: 1rem;
-    color: #c7c7c7;
-  }
-  
-  .community-date {
-    font-size: 0.9rem;
-    color: #f6f6f6;
-    margin-bottom: 10px;
-  }
-  
-  .community-post-footer {
-    margin-top: 10px;
-  }
-  
-  .community-like-btn {
-    padding: 8px 16px;
-    border-radius: 30px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .community-like-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Profile Section */
-  .community-profile {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .community-profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .community-profile p {
-    font-size: 1rem;
-    color: #ffffff;
-    margin-right: 10px;
-  }
-  
-  /* Activity Feed */
-  .community-activity-feed {
-    list-style: none;
-    padding-left: 0;
-    font-size: 0.9rem;
-    color: #fcfcfc;
-  }
-  
-  .community-activity-feed li {
-    margin-bottom: 10px;
-  }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 1200px) {
-    .community-column {
-      max-width: 45%;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .community-main {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .community-column {
-      max-width: 100%;
-    }
-  
-    .community-search-bar {
-      width: 90%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .community-search-bar {
-      width: 100%;
-    }
-  }
-  
-  /* Additional styles for scrollable community-main-column */
-.community-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 40px;
-    gap: 20px;
-    flex: 1;
-    overflow: hidden; /* Prevents overflow for main container */
-  }
-  
-  .community-main-column {
-    flex: 1;
-    min-width: 300px;
-    max-width: 55%;
-    height: 550px; /* Full viewport height */
-    overflow-y: auto; /* Enables vertical scrolling */
-    padding-right: 10px; /* Adds padding for scrollbar */
-    box-sizing: border-box; /* Ensures padding does not affect width */
-  }
-  
-  /* Ensuring other columns adapt to remaining space */
-  .community-column {
-    flex: 1;
-    min-width: 300px;
-    max-width: 25%;
-    overflow: hidden; /* Prevent overflow */
-    height: 100vh; /* Full viewport height */
-  }
-  /* Scrollbar Styles */
-.community-main-column::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
-    background-color: #000000; /* Background color of the scrollbar track */
-  }
-  
-  .community-main-column::-webkit-scrollbar-thumb {
-    background-color: #ffffff; /* Color of the scrollbar thumb */
-    border-radius: 6px; /* Rounded corners for thumb */
-    border: 3px solid #000000; /* Adds space around thumb, making track visible */
-  }
-  
-  .community-main-column::-webkit-scrollbar-track {
-    background-color: #000000; /* Color of the scrollbar track */
-  }
-  
+  width: 17%;
+  background-color: #1e1e1e; /* Dark sidebar */
+  padding: 40px;
+}
+
+.left-sidebar .profile-section {
+  text-align: center;
+}
+
+.left-sidebar .profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.left-sidebar h3 {
+  margin-top: 10px;
+  color: #ffffff; /* White text for the name */
+}
+
+.profile-stats {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.profile-stats li {
+  display: flex;
+  justify-content: space-between;
+  color: #e0e0e0; /* Light text for stats */
+}
+
+.nav-linkss {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-linkss a {
+  text-decoration: none;
+  color: #b0b0b0; /* Light text for links */
+  margin: 10px 0;
+}
+
+.nav-linkss a:hover {
+  color: #76c7c0; /* Accent color on hover */
+}
+
+/* Main Feed */
+.feed {
+  margin-top: 120px;
+  width: 60%;
+  padding: 20px;
+  background-color: #181818; /* Dark background for main feed */
+}
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #333; /* Dark border for search bar */
+  background-color: #252525; /* Dark search bar */
+  color: #e0e0e0; /* Light text for search input */
+}
+
+.feed-content {
+  margin-top: 20px;
+}
+
+.feed-post {
+  background-color: #252525; /* Dark post background */
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #333; /* Dark border */
+  border-radius: 5px;
+}
+
+.feed-post h3 {
+  margin: 0 0 10px;
+  color: #ffffff; /* Light text */
+}
+
+.feed-post p {
+  color: #b0b0b0; /* Light gray for hashtags */
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: #b0b0b0; /* Light text for actions */
+}
+
+/* Right Sidebar */
+.right-sidebar {
+  width: 25%;
+  background-color: #1e1e1e; /* Dark background for sidebar */
+  padding: 40px; /* Darker border */
+}
+
+.followed-tags, .hot-discussions {
+  margin-bottom: 20px;
+}
+
+.followed-tags ul, .hot-discussions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.followed-tags ul li, .hot-discussions ul li {
+  padding: 10px;
+  border-bottom: 1px solid #333; /* Darker border for list items */
+  color: #e0e0e0; /* Light text */
+}
+
+.followed-tags ul li:hover, .hot-discussions ul li:hover {
+  background-color: #333; /* Slight hover effect */
+  cursor: pointer;
+}
+
+/* Dark Theme for General Elements */
+body {
+  background-color: #121212; /* Dark background */
+}
+
+.add-post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.new-post-input {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #282828;
+  color: #e0e0e0;
+  outline: none;
+}
+
+.add-post-btn {
+  padding: 10px;
+  background-color: #ffffff;
+  color: #050505;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-post-btn:hover {
+  background-color: #ffffff;
+}
+.feed {
+  flex: 1;
+  padding: 20px;
+  background-color: #181818; /* Dark theme background */
+  color: white; /* Light text color for contrast */
+  height: calc(100vh - 100px); /* Adjust height according to your header/footer height */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* Optional: make scrollbar thin */
+}
+
+.feed::-webkit-scrollbar {
+  width: 8px;
+}
+
+.feed::-webkit-scrollbar-thumb {
+  background-color: #181818; /* Customize scrollbar color */
+  border-radius: 10px;
+}
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white; /* Scrollbar thumb (the draggable part) */
+  border-radius: 6px; /* Optional: for rounded corners */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #181818; /* Scrollbar background */
+  border-radius: 6px; /* Optional: for rounded corners */
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin; /* Sets scrollbar width */
+  scrollbar-color: white black; /* Scrollbar thumb color and track color */
+}

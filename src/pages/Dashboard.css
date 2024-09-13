@@ -1,5 +1,6 @@
+/* Dashboard Dark Theme */
 .dashboard-dark-container {
-  background-color: #222325;
+  background-color: #121212;
   color: #f5f5f5;
   padding: 20px;
   min-height: 100vh;
@@ -7,8 +8,7 @@
 
 .welcome-section {
   text-align: center;
-  margin-bottom: 30px;
-  margin-top: 100px;
+  margin: 100px 0 30px;
 }
 
 .badges-section {
@@ -23,10 +23,10 @@
   color: #ffffff;
   padding: 10px 20px;
   border-radius: 5px;
-  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
 
 .badge.github {
@@ -34,11 +34,11 @@
 }
 
 .performance-section {
-  margin-bottom: 30px;
-  text-align: center;
   margin: 50px;
+  text-align: center;
 }
-.performance-section h2{
+
+.performance-section h2 {
   font-size: 35px;
   font-weight: 500;
 }
@@ -57,14 +57,19 @@
   width: 400px;
   margin: 20px;
 }
-
+.resume-score-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .progress-bar {
   background-color: #444;
   border-radius: 5px;
   margin-top: 10px;
-  height: 10px;
-  width: 70%;
-  position: relative;
+  margin-left: 120px;
+  height: 15px;
+  width: 80%;
 }
 
 .progress {
@@ -83,21 +88,53 @@
   flex: 1;
 }
 
-.job-recommendations-section, .course-recommendations-section, .news-feed-section {
-  margin-bottom: 30px;
-}
-.course-recommendations-section{
-  width: 1100px;
-  height: 950px;
+/* Course Recommendations */
+.course-recommendations-section {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.course-recommendations-section h2{
-  text-align: center;
-  height: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
+.course-recommendations-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.course-card {
+  background-color: #3c4043;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-card iframe {
+  width: 100%;
+  border: none;
+  height: 250px;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+/* Job Recommendations */
 .job-list {
   display: flex;
   flex-direction: column;
@@ -118,67 +155,7 @@
   height: 50px;
 }
 
-.course-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.course-card {
-  background-color: #3c4043;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.course-card iframe {
-  width: 100%;
-  border: none;
-}
-
-.news-feed-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.news-item {
-  background-color: #3c4043;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-.co{
-  display: flex;
-  
-  
-}
-.c{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 40px;
-  align-items: center;
-}
-.course-list{
-  margin-top: 70px;
- 
-  width: 700px;
-  height: 300px;
-}
-.company-logo{
-  height: 60px;
-  width: 60px;
-}
-
-.resume-score-cards{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.score-card{
-  margin: 10px;
-}
-
+/* Skills Section */
 .skills-section {
   margin: 50px 0;
   text-align: center;
@@ -194,15 +171,28 @@
 .skill-item {
   width: 120px;
   margin: 20px;
+  text-align: center;
 }
 
 .skill-item p {
-  margin-top: 10px;
   color: #fff;
   font-size: 1.2rem;
   font-weight: 500;
-  text-align: center;
+  margin-top: 10px;
 }
+
+/* Resume Score Section */
+.resume-score-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.score-card {
+  margin: 10px;
+}
+
 .resume-score-section {
   margin: 20px 0;
 }
@@ -211,17 +201,11 @@
   padding-left: 20px;
   width: 100%;
   border-radius: 20px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 30px;
 }
 
 .progress {
   width: 100%;
-  height: 50px;
+  height: 30px;
   border-radius: 20px;
   line-height: 30px;
   color: white;
@@ -229,28 +213,8 @@
   transition: width 0.5s ease-in-out;
 }
 
-.skills-section {
-  margin-top: 40px;
-}
-
-.skills-circle-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.skill-item {
-  text-align: center;
-  margin: 20px;
-}
-.CircularProgressbar-path{
-  height: 20px;
-  width: 20px;
-}
-a{
-  text-decoration: none;
-  color: white;
-}
-.heatmap-section{
+/* Heatmap Section */
+.heatmap-section {
   margin: 20px;
   margin-top: 10px;
   margin-bottom: 40px;
@@ -259,47 +223,41 @@ a{
   align-items: center;
   flex-wrap: wrap;
 }
-.heatmap-section h2{
-  margin: 20px;
-  margin-bottom:30px ;
-}
-.job-recommendations-section{
-  margin: 30px;
-}
-.job-recommendations-section h2{
-  margin: 30px;
-}
-/* Dashboard.css */
 
-/* Heatmap Styles */
+.heatmap-section h2 {
+  margin-bottom: 30px;
+}
+
+.react-calendar-heatmap {
+  width: 70%;
+}
+
 .react-calendar-heatmap .color-empty {
-  fill: #333333; /* Darker shade for empty cells */
+  fill: #333333;
 }
 
 .react-calendar-heatmap .color-github-1 {
-  fill: #484848; /* Slightly lighter shade for low activity */
+  fill: #484848;
 }
 
 .react-calendar-heatmap .color-github-2 {
-  fill: #616161; /* Medium shade for moderate activity */
+  fill: #616161;
 }
 
 .react-calendar-heatmap .color-github-3 {
-  fill: #757575; /* Lighter shade for higher activity */
+  fill: #757575;
 }
 
 .react-calendar-heatmap .color-github-4 {
-  fill: #90a4ae; /* Lightest shade for highest activity */
+  fill: #90a4ae;
 }
 
 .react-calendar-heatmap text {
-  fill: #ffffff; /* White text for day labels */
+  fill: #ffffff;
 }
 
-rect.color-empty{
-  background-color: black;
-  color: black;
-}
-.react-calendar-heatmap{
-  width: 70%;
+/* Links */
+a {
+  text-decoration: none;
+  color: white;
 }

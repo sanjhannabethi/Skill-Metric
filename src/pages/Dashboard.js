@@ -48,6 +48,8 @@ const Dashboard = () => {
     const dummyCourseRecommendations = [
       { id: 1, title: 'Advanced React.js Course', provider: 'Youtube', videoId: 'bMknfKXIFA8?si=1uRQ-MzKWKXLZ367' },
       { id: 2, title: 'Data Science with Python', provider: 'Youtube', videoId: 'mkv5mxYu0Wk?si=R0KhmVHJeJfxIvGW' },
+      { id: 3, title: 'Cloud Computing', provider: 'Youtube', videoId: 'EN4fEbcFZ_E?si=E8CjIvJVQNNcQyLe' },
+      { id: 4, title: 'AWS Course', provider: 'Youtube', videoId: 'k1RI5locZE4?si=cPKQTZUJP6S_3oNq' },
     ];
 
     setAssignments(dummyAssignments);

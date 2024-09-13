@@ -13,7 +13,7 @@ body {
   flex: 1; /* Allows the main content to push the footer to the bottom */
 }
 .footer {
-  background-color: #242423;
+  background-color: #1e1e1e;
   color: #ffffff;
   padding: 40px 20px;
   font-family: 'Roboto', sans-serif;
